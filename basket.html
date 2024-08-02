@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="alerts.css">
+    <style>
+        .buy {
+            margin: 0 !important;
+            background: var(--error);
+        }
+
+        footer {
+            margin-top: 30%;
+        }
+
+        .card {
+            width: 100%;
+        }
+
+        .buy-basket {
+            width: 25%;
+            border: 0;
+            height: 50px;
+            margin: 0 0 40px 0;
+            border-radius: 10px;
+            color: white;
+            font-size: 18px;
+            background-color: var(--success);
+        }
+    </style>
+    <title>Document</title>
+</head>
+
+<body>
+    <div class="header row">
+        <a href="index.html"><img class="logo" src="imgs/logo.svg" alt="" srcset=""></a>
+        <div class="menu-items row">
+            <a href="basket.html">
+                <span>Корзина</span>
+                <img class="icon" src="imgs/basket.svg" alt="" srcset="">
+            </a>
+            <a href="favorite.html">
+                <span>Избранное</span>
+                <img class="icon" src="imgs/like.svg" alt="" srcset="">
+            </a>
+            <a href="about.html">
+                <span>О нас</span>
+                <img class="icon" src="imgs/about.svg" alt="" srcset="">
+            </a>
+        </div>
+    </div>
+    <div class="absolute-content">
+        <div class="container">
+            <div><input class="buy-basket" type="button" value="Оформить заказ" onclick="buybasket()"></div>
+            <div class="content basket">
+
+
+            </div>
+        </div>
+        <footer>
+            Техносфера. Все права защищены.
+        </footer>
+        <div class="alert alert-error row"><img src="imgs/warning.svg" alt=""><span>Товар удален из корзины.</span>
+        </div>
+    </div>
+</body>
+<script src="script.js"></script>
+<script>
+    basketelements[0].innerHTML = localStorage.getItem("basket");
+    for (let i = 0; i < buy.length; i++) {
+        pay[i].innerHTML = '<input type="button" class="remove buy button1" value="Удалить">'
+        remove[i].addEventListener("click", () => {
+            aalert[0].classList.add("alert-anim");
+            cards[i].style.display = "none";
+            setTimeout(() => {
+                localStorage.setItem("basket", basketelements[0].innerHTML.split(","))
+                aalert[0].classList.remove("alert-anim");
+            }, 1000)
+        })
+    }
+</script>
+
+</html>
